@@ -1,10 +1,19 @@
 import React from "react";
-import {Link} from 'react-router-dom';
-import {Form, Input} from 'antd';
+import {Link, useNavigate} from 'react-router-dom';
+import {Form, Input, message} from 'antd';
+import axios from 'axios'
 const Register = () => {
+const navigate = useNavigate()
+
     //from submit
-    const submitHandler = (values) => {
-        console.log(values);
+    const submitHandler = async (values) => {
+        try{
+          await axios.post('/users/register', values) // Here, I used Async function
+          message.success('Registration Successful')
+          navigate('/login')
+        } catch(error){
+          message.error("invalid username or password");
+        }
     };
     return (
         <>
