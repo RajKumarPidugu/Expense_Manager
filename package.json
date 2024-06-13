@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:3000/api/v1",
+  "proxy": "http://localhost:8080/api/v1",
   "name": "expense-manager",
   "version": "1.0.0",
   "description": "Expense Tracker app",
